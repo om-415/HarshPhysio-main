@@ -19,7 +19,7 @@ const Navbar = () => {
         <a href="#" className="font-sora font-semibold text-lg text-foreground tracking-tight">
           Harsh Physio Clinic
         </a>
-
+        
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
           {links.map((link) => (

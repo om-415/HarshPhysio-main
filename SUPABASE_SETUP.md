@@ -176,8 +176,8 @@ npm run lint
 → Check that `.env` has the correct URL and key:
 
 ```
-VITE_SUPABASE_URL=https://yksghxmsncgxfbfrqnbw.supabase.co
-VITE_SUPABASE_ANON_KEY=sb_publishable_3kBEybCxlnLdJShh432QDw_lfU7W6qy
+VITE_SUPABASE_URL=https://your-project.supabase.co
+VITE_SUPABASE_ANON_KEY=your-anon-key
 ```
 
 ---
