@@ -21,18 +21,20 @@ const ContactSection = () => {
     setLoading(true);
     try {
       // Persist booking to Supabase
+      const bookingPayload = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email || null,
+        treatment_type: formData.treatment,
+        preferred_date: formData.date || null,
+        message: formData.message,
+      };
+
+      console.log("Booking Payload:", bookingPayload);
+
       const { data, error } = await supabase
         .from("bookings")
-        .insert([
-          {
-            name: formData.name,
-            phone: formData.phone,
-            email: formData.email || null,
-            treatment_type: formData.treatment,
-            preferred_date: formData.date || null,
-            message: formData.message,
-          },
-        ])
+        .insert([bookingPayload])
         .select()
         .single();
 
@@ -232,6 +234,7 @@ const ContactSection = () => {
                     setFormData({ ...formData, treatment: e.target.value })
                   }
                   className="input-clinical"
+                  required
                 >
                   <option>Back Pain Treatment</option>
                   <option>Neck Pain Therapy</option>

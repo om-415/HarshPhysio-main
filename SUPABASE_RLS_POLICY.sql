@@ -1,27 +1,56 @@
--- Recommended Supabase policies for public frontend use.
--- Use only if you understand the security implications of anonymous writes.
+-- Enable Row Level Security for production-safe access.
+ALTER TABLE public.reviews ENABLE ROW LEVEL SECURITY;
+ALTER TABLE public.bookings ENABLE ROW LEVEL SECURITY;
 
--- Allow public select on reviews if RLS is enabled.
-create policy "Allow public select on reviews"
-  on public.reviews
-  for select
-  using (true);
+-- Grants for the anonymous public role.
+GRANT USAGE ON SCHEMA public TO anon;
+GRANT SELECT, INSERT ON public.reviews TO anon;
+GRANT INSERT ON public.bookings TO anon;
 
--- Allow anonymous inserts into reviews.
-create policy "Allow public insert on reviews"
-  on public.reviews
-  for insert
-  with check (true);
+-- Reviews policies
+CREATE POLICY "Public can select reviews"
+  ON public.reviews
+  FOR SELECT
+  USING (true);
 
--- Allow anonymous inserts into bookings.
-create policy "Allow public insert on bookings"
-  on public.bookings
-  for insert
-  with check (true);
+CREATE POLICY "Public can insert reviews"
+  ON public.reviews
+  FOR INSERT
+  WITH CHECK (true);
 
--- If you want to allow read access on bookings for service-side functions only,
--- do not expose select policies publicly unless needed.
+CREATE POLICY "Public cannot update reviews"
+  ON public.reviews
+  FOR UPDATE
+  USING (false);
 
--- Enable RLS explicitly if not already enabled.
-alter table public.reviews enable row level security;
-alter table public.bookings enable row level security;
+CREATE POLICY "Public cannot delete reviews"
+  ON public.reviews
+  FOR DELETE
+  USING (false);
+
+-- Bookings policies
+CREATE POLICY "Public can insert bookings"
+  ON public.bookings
+  FOR INSERT
+  WITH CHECK (
+    auth.role() = 'anon'
+    AND phone IS NOT NULL
+    AND phone <> ''
+    AND treatment_type IS NOT NULL
+    AND treatment_type <> ''
+  );
+
+CREATE POLICY "Public cannot select bookings"
+  ON public.bookings
+  FOR SELECT
+  USING (false);
+
+CREATE POLICY "Public cannot update bookings"
+  ON public.bookings
+  FOR UPDATE
+  USING (false);
+
+CREATE POLICY "Public cannot delete bookings"
+  ON public.bookings
+  FOR DELETE
+  USING (false);

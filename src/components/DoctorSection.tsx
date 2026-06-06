@@ -20,7 +20,7 @@ const DoctorSection = () => {
           </div>
 
           <div className="md:col-span-2">
-            <h3 className="text-2xl font-semibold mb-2">Dr. Harsh Upadhyay</h3>
+            <h3 className="text-2xl font-semibold mb-2">Dr. Harshvardhan Upadhyay</h3>
             <p className="text-muted-foreground mb-4">
               Founder & Chief Physiotherapist — Recovery specialist focused on
               evidence-based, patient-first care.
