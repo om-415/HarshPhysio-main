@@ -192,7 +192,7 @@ const ReviewsSection = () => {
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.2 }}
           className="text-center max-w-2xl mx-auto mb-12"
         >
           <p className="text-sm font-medium uppercase tracking-widest text-primary mb-3">
@@ -232,10 +232,10 @@ const ReviewsSection = () => {
               100% { transform: translateX(0); }
             }
             .marquee-rtl {
-              animation: marquee-rtl 60s linear infinite;
+              animation: marquee-rtl 30s linear infinite;
             }
             .marquee-ltr {
-              animation: marquee-ltr 60s linear infinite;
+              animation: marquee-ltr 30s linear infinite;
             }
             .marquee-container:hover .marquee-rtl,
             .marquee-container:hover .marquee-ltr {
