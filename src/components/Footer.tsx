@@ -88,14 +88,12 @@ export const WhatsAppFloat = () => (
     className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg flex items-center justify-center"
     aria-label="WhatsApp"
   >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="currentColor"
-    >
-      <path d="M20.52 3.48A11.8 11.8 0 0 0 12.03.5C6.08.5 1.18 5.4 1.18 11.35c0 2.02.54 3.9 1.56 5.56L.5 23.5l6.8-1.78c1.61.89 3.45 1.37 5.33 1.37h.02c5.95 0 10.85-4.9 10.85-10.85 0-2.92-1.14-5.63-3.37-7.76zM12.03 21.5c-1.62 0-3.21-.41-4.62-1.19l-.33-.18-4.04 1.06 1.09-3.9-.21-.36A8.02 8.02 0 0 1 4.02 11.35c0-4.43 3.6-8.03 8.01-8.03 2.14 0 4.15.83 5.66 2.34 1.51 1.51 2.33 3.51 2.33 5.65 0 4.42-3.6 8.02-8.01 8.02z" />
-    </svg>
+    <img
+      src="/src/assets/whatsapp.png"
+      alt="WhatsApp"
+      width={20}
+      height={20}
+      className="w-5 h-5"
+    />
   </a>
 );
