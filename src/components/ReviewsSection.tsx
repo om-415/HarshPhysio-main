@@ -289,7 +289,7 @@ const ReviewsSection = () => {
               below to leave a review on Google.
             </p>
             <a
-              href="https://search.google.com/local/writereview?placeid=YOUR_GOOGLE_PLACE_ID"
+              href="https://search.google.com/local/writereview?placeid=ChIJ8aY-TLBZmTkRoRe7PBKcDk0"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-lg"

@@ -29,7 +29,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.1 }}
-            className="heading-hero text-foreground mb-4"
+            className="heading-hero text-foreground mb-4 font-fluctuation"
           >
             Move Better. Live Pain-Free.
           </motion.h1>

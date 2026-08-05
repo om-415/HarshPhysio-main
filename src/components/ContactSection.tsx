@@ -154,8 +154,9 @@ const ContactSection = () => {
               className="rounded-2xl overflow-hidden mt-6"
               style={{ boxShadow: "0 0 0 1px rgba(0,0,0,.05)" }}
             >
+              
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.0!2d81.0!3d26.9!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDU0JzAwLjAiTiA4McKwMDAnMDAuMCJF!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d889.0062869266294!2d80.99633503845997!3d26.966102942724458!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399959b04c3ea6f1%3A0x4d0e9c123cbb17a1!2sHarsh%20Physio%20Clinic!5e0!3m2!1sen!2sin!4v1785951179902!5m2!1sen!2sin"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
